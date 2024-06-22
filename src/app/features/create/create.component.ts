@@ -40,12 +40,8 @@ export class CreateComponent {
     const title = this.form.get('title')?.value;
     if (title)
       this.productsService.post({ title: title }).subscribe(() => {
-        this.matSnackBar.open('Produto criado com sucesso!', 'Ok', {
-          duration: 3000,
-          horizontalPosition: 'right',
-          verticalPosition: 'top',
-        });
-        this.router.navigateByUrl('/').catch(console.log)
+        this.matSnackBar.open('Produto criado com sucesso!', 'Ok');
+        this.router.navigateByUrl('/')
       });
   }
 }
